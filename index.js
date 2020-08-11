@@ -16,8 +16,10 @@ $(document).ready(function(){
   '</li>');
     $('#shopping-list-entry').val(''); 
   });
-  $('.shopping-item-toggle').click(function(){
-    console.log('debug');
-    $(this).closest('span').toggleClass('shopping-item__checked');
+  $('.shopping-item-controls').on('click', '.shopping-item-toggle', function(){
+    $(this).closest('li', 'span').toggleClass('shopping-item__checked');
+  });
+  $('.shopping-item-delete').click(function(){
+    $(this).closest('li').remove();
   })
 })
