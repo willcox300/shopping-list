@@ -16,10 +16,10 @@ $(document).ready(function(){
   '</li>');
     $('#shopping-list-entry').val(''); 
   });
-  $('.shopping-item-controls').on('click', '.shopping-item-toggle', function(){
-    $(this).closest('li', 'span').toggleClass('shopping-item__checked');
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
   });
-  $('.shopping-item-delete').click(function(){
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
     $(this).closest('li').remove();
-  })
+  });
 })
